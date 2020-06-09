@@ -10,6 +10,12 @@
 
 ## Awalan
 
+Untuk bisa menjalankan semua perintah dibawah yang paling utama adalah menginstal node.js
+
+cara installnya silahkan klik [Link ini](https://nodejs.org/en/download/)
+
+Cara installnya seperti install aplikasi pada umumnya ya.
+
 untuk bisa mengikuti step dibawah ini silahkan terlebih dahulu download MongoDB dulu di link ini [Download MongoDB](https://www.mongodb.com/try/download/community) klik On-Premises pilih sesuai OS pilih package msi
 
 - untuk cara menginstallnya next2 saja dan pilih complete
@@ -20,6 +26,8 @@ Jangan lupa terkoneksi internet juga ya
 
 kalo sudah sampai masuk ke dalam Aplikasinya klik Connect ya
 And baru ikuti step dibawah ini
+
+## Part 1 Mmebuat Database dan menambhakan database
 
 ## Step pertama untuk instalasi
 
@@ -74,17 +82,21 @@ buat file baru namanya seterah.
 lalu ketikan script yang ada di file
 
 ```
-scriptnya bisa liat di file buatdata.js
+scriptnya bisa liat di file create_data.js
 ```
 
 Di file itu juga sudah ada penjelasanya.
 
 untuk dokumentasi mongoose resmi bisa kamu baca disini [Dokumentasi dan cara koneksi](https://mongoosejs.com/)
 
+Lalu silahkan kamu cek di MongoDB, maka akan bertambah db yang kamu buat
+
+### Info
+
 untuk menjalankan filenya ketikan ini di terminal
 
 ```
-node .\buatdata.js
+node .\create_data.js
 ```
 
 Penjelasan :
@@ -93,10 +105,6 @@ Penjelasan :
 .\nama_file_kamu.js
 ```
 
-Lalu silahkan kamu cek di MongoDB, maka akan bertambah db yang kamu buat
-
-### Info
-
 Untuk mengstop proses yang sedang berjalan caranya :
 
 ```
@@ -104,3 +112,38 @@ ctrl+c
 ```
 
 Kerana kalo input data satuan tidak memakai fungsi close database saat sudah berhasil insert data
+
+## Part 2 Read Data
+
+# Step keempat Membuat Koneksi dengan Database
+
+Caranya sama dengan Part 1 yaitu membuat koneksinya terlebih dahulu
+
+Silahkan kamu buka saja file yang pertama kamu buat. kalo saya nama filenya create_data.js
+
+Dan ambil script bagian koneksi dan modelnya ya..
+
+atau kalo kamu bingung bisa liat script dibawah ini untuk koneksi dan modelnya
+
+```javascript
+const mongoose = require("mongoose");
+
+mongoose.connect("mongodb://localhost:27017/db-belajar", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+const buahScheme = new mongoose.Schema({
+  name: String,
+  harga: Number,
+  review: String,
+});
+
+const Buah = mongoose.model("Buah", buahScheme);
+```
+
+Lalu copy script di atas atau script di file read_data.js
+
+Lalu buat file namanya read_data.js nama filenya bebas. sesuka kamu saja ya.
+
+Untuk menjalankanya kamu bisa cek di bagian info di atas ya.
