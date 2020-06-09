@@ -115,7 +115,7 @@ Kerana kalo input data satuan tidak memakai fungsi close database saat sudah ber
 
 ## Part 2 Read Data
 
-# Step keempat Membuat Koneksi dengan Database
+## Step keempat Membuat Koneksi dengan Database
 
 Caranya sama dengan Part 1 yaitu membuat koneksinya terlebih dahulu
 
@@ -147,3 +147,59 @@ Lalu copy script di atas atau script di file read_data.js
 Lalu buat file namanya read_data.js nama filenya bebas. sesuka kamu saja ya.
 
 Untuk menjalankanya kamu bisa cek di bagian info di atas ya.
+
+## Part 3 Validasi Data
+
+## Step kelima untuk melakukan pengecekan terhadap data sebelum data tersimpan kedalam database
+
+buat file baru seperti biasa, nama file yang saya buat validation_data.js kamu bebas membuat namanya seperti apa.
+
+Untuk membuat fungsi validation kamu bisa membaca documen resminya dari mongoose [disini](https://mongoosejs.com/docs/validation.html#built-in-validators)
+
+Agak bingung ? oke coba ketikan script dibawah ini sebagai acuan kamu, dan ketikan script ini kedalam file yang sudah kamu buat ya
+
+Sebagai contoh :
+
+```javascript
+const mongoose = require("mongoose");
+
+// Koneksikan
+mongoose.connect("mongodb://localhost:27017/db-belajar", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+const buahScheme = new mongoose.Schema({
+  name: {
+    type: String,
+    required: [true, "Nama tidak ada, isi dulu dong!"],
+  },
+  harga: {
+    type: Number,
+    min: 5000,
+    max: 50000,
+  },
+  review: String,
+});
+
+const Buah = mongoose.model("Buah", buahScheme);
+
+const melon = new Buah({
+  name: "Melon", // Untuk mencoba errornya kamu bisa meng komen script ini
+  harga: 10000, // atau mengubah ini dibawah 5rb
+  review: "Seger abiiieezzz!!!",
+});
+
+melon.save(function (error) {
+  if (error) {
+    // Jika error
+    console.log(error);
+  } else {
+    mongoose.connection.close();
+
+    console.log("save data success in database");
+  }
+});
+```
+
+Untuk mencobanya silahkan scroll diatas pada bagian info
