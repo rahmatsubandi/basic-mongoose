@@ -1,0 +1,14 @@
+{
+  "name": "basic-mongoose",
+  "version": "1.0.0",
+  "description": "Buat folder baru, namanya bebas.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^5.9.18"
+  }
+}
