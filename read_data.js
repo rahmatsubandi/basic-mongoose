@@ -35,11 +35,11 @@ Buah.find(function (error, buah) {
     // Cek data yang ingin di tampilkan (Semua data)
     // console.log(buah);
 
-    // Jika hanya ingin menampilkan data salah satunya saja
+    // Jika hanya ingin menampilkan data yang dipilih object
     // dan membuat metod untuk menampilkan datanya berdasarkan object
-    buah.forEach(function (tampilansatuan) {
-      // Object yang ingin ditampilkan
-      console.log(tampilansatuan.name);
+    buah.forEach(function (tampildatasesuaiobject) {
+      // data yang ingin di tampilkan berdasarkan Object
+      console.log(tampildatasesuaiobject.name);
     });
   }
 });

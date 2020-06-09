@@ -156,50 +156,22 @@ buat file baru seperti biasa, nama file yang saya buat validation_data.js kamu b
 
 Untuk membuat fungsi validation kamu bisa membaca documen resminya dari mongoose [disini](https://mongoosejs.com/docs/validation.html#built-in-validators)
 
-Agak bingung ? oke coba ketikan script dibawah ini sebagai acuan kamu, dan ketikan script ini kedalam file yang sudah kamu buat ya
+Agak bingung ? oke coba buka file saya yang bernama validation_data.js untuk melihar script dan penjelasan yang sudah saya buat .
 
-Sebagai contoh :
+Untuk mencobanya silahkan scroll diatas pada bagian info
 
-```javascript
-const mongoose = require("mongoose");
+## Part 4 Update dan Delete Data
 
-// Koneksikan
-mongoose.connect("mongodb://localhost:27017/db-belajar", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+## Step keenam membaca documment mongoose untuk update dan delete
 
-const buahScheme = new mongoose.Schema({
-  name: {
-    type: String,
-    required: [true, "Nama tidak ada, isi dulu dong!"],
-  },
-  harga: {
-    type: Number,
-    min: 5000,
-    max: 50000,
-  },
-  review: String,
-});
+buat file baru seperti biasa, nama file yang saya buat update_delete_data.js kamu bebas membuat namanya seperti apa.
 
-const Buah = mongoose.model("Buah", buahScheme);
+Untuk membuat fungsi update kamu bisa membaca documment resminya dari mongoose [disini](https://mongoosejs.com/docs/api/model.html#model_Model.updateOne)
 
-const melon = new Buah({
-  name: "Melon", // Untuk mencoba errornya kamu bisa meng komen script ini
-  harga: 10000, // atau mengubah ini dibawah 5rb
-  review: "Seger abiiieezzz!!!",
-});
+Untuk membuat fungsi delete kamu bisa membaca documment resminya dari mongoose [disini](https://mongoosejs.com/docs/api/model.html#model_Model-deleteOne)
 
-melon.save(function (error) {
-  if (error) {
-    // Jika error
-    console.log(error);
-  } else {
-    mongoose.connection.close();
+Kalo bingung lagi coba buka lagi ya file saya yang bernama update_delete_data.js
 
-    console.log("save data success in database");
-  }
-});
-```
+Sebenernya kamu bisa copy file yang dari Step kelima, dari membuat koneksi dan membuat model saja yang di copy
 
 Untuk mencobanya silahkan scroll diatas pada bagian info
