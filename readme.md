@@ -175,3 +175,15 @@ Kalo bingung lagi coba buka lagi ya file saya yang bernama update_delete_data.js
 Sebenernya kamu bisa copy file yang dari Step kelima, dari membuat koneksi dan membuat model saja yang di copy
 
 Untuk mencobanya silahkan scroll diatas pada bagian info
+
+## Part 5 Relationship atau menghubungkan one-to-one anatar dua model buah dan pelanggan
+
+## Step Ketujuh membuat data baru dan saling tehubung
+
+buat file baru seperti biasa, nama file yang saya buat relationship_data.js kamu bebas membuat namanya seperti apa.
+
+Silahkan buka file relationship_data.js untuk melihat script dan penjelasanya
+
+## Selesai, cukup sampai disini dulu yah untuk basic mongoose. Terimakasih telah membaca
+
+# Cooming Soon untuk Step atau Part Selanjutnya ya.

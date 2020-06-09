@@ -35,20 +35,18 @@ const Buah = mongoose.model("Buah", buahScheme);
 // Setelah koma pilihan yang ingin di update
 // Lalu membuat function error
 
-// Buah.updateOne(
-//   { _id: "5edf52898493ac1414df320a" },
-//   { name: "Kelengkeng" },
-//   function (error) {
-//     // Membuat object
-//     if (error) {
-//       // Jika error
-//       console.log(error);
-//     } else {
-//       // Jika berhasil update data
-//       console.log("Data berhasil di update");
-//     }
-//   }
-// );
+Buah.updateOne({ _id: "5edf10a560141a09a869bd99" }, { name: "Apel" }, function (
+  error
+) {
+  // Membuat object
+  if (error) {
+    // Jika error
+    console.log(error);
+  } else {
+    // Jika berhasil update data
+    console.log("Data berhasil di update");
+  }
+});
 
 // ============================================ //
 
@@ -57,16 +55,16 @@ const Buah = mongoose.model("Buah", buahScheme);
 // Update berdasarkan dari id
 // Lalu membuat function error
 
-Buah.deleteOne({ _id: "5edf52898493ac1414df320a" }, function (error) {
-  // Membuat object
-  if (error) {
-    // Jika error
-    console.log(error);
-  } else {
-    // Jika berhasil update data
-    console.log("Data berhasil di delete");
-  }
-});
+// Buah.deleteOne({ _id: "5edf52898493ac1414df320a" }, function (error) {
+//   // Membuat object
+//   if (error) {
+//     // Jika error
+//     console.log(error);
+//   } else {
+//     // Jika berhasil update data
+//     console.log("Data berhasil di delete");
+//   }
+// });
 
 // ============================================ //
 
